@@ -1,0 +1,22 @@
+server:
+  port: 10001
+
+
+spring:
+  application:
+    name: Shenzc-registry
+
+
+#Eurekaserver的配置
+eureka:
+  client:
+    fetch-registry: false #是否注册自己的信息到EurekaServer，默认是true
+    register-with-eureka: false #是否拉去其他服务的信息，默认是true
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka #EurekaServer的地址，现在是自己的地址，如果是集群，要加上其他server的地址
+
+
+
+  server:
+    enable-self-preservation: false #关闭自我保护
+    eviction-interval-timer-in-ms: 1000 #每隔5秒进行一次服务列表清理
