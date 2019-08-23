@@ -10,7 +10,6 @@ import javax.persistence.Table;
  */
 @Table(name="brand")
 @Data
-
 public class Brand {
 
     private int id;
