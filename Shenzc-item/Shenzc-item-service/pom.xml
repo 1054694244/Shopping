@@ -73,6 +73,11 @@
             <artifactId>Shenzc-item-interface</artifactId>
             <version>${shenzc.shopping}</version>
         </dependency>
+        <dependency>
+            <groupId>com.shenzc.common</groupId>
+            <artifactId>Shenzc-common</artifactId>
+            <version>${shenzc.shopping}</version>
+        </dependency>
     </dependencies>
 
 </project>

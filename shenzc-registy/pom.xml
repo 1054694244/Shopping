@@ -11,7 +11,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.shenzc.common</groupId>
+    <groupId>com.shenzc.com.shenzc.common</groupId>
     <artifactId>shenzc-registy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
