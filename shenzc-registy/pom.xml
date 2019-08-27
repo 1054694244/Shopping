@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <artifactId>shenzc</artifactId>
         <groupId>com.shenzc.parent</groupId>
+        <artifactId>shenzc</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -19,6 +19,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <version>${euraka.version}</version>
         </dependency>
     </dependencies>
 

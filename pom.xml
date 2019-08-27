@@ -34,33 +34,55 @@
         <mapper.starter.version>2.0.2</mapper.starter.version>
         <druid.starter.version>1.1.9</druid.starter.version>
         <mysql.version>5.1.32</mysql.version>
-        <pageHelper.starter.version>1.2.3</pageHelper.starter.version>
+        <pageHelper.starter.version>1.2.10</pageHelper.starter.version>
         <shenzc.latest.version>1.0.0-SNAPSHOT</shenzc.latest.version>
         <fastDFS.client.version>1.26.1-RELEASE</fastDFS.client.version>
+        <lombok.version>1.16.10</lombok.version>
+        <mybatisplus.starter.version>2.3.3</mybatisplus.starter.version>
+        <euraka.version>2.0.2.RELEASE</euraka.version>
+        <jpa.version>1.0</jpa.version>
+        <shenzc.shopping>0.0.1-SNAPSHOT</shenzc.shopping>
     </properties>
+
 
     <dependencyManagement>
         <dependencies>
+            <!--jpa-->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>${jpa.version}</version>
+            </dependency>
+            <!--zuul网管-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+                <version>${euraka.version}</version>
+            </dependency>
+            <!--eureka-client客户端-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${euraka.version}</version>
+            </dependency>
+            <!--是springboot提供的微服务检测接口，默认对外提供几个接口：/info-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${euraka.version}</version>
+            </dependency>
+            <!--eureka-server注册中心-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+                <version>${euraka.version}</version>
+            </dependency>
             <!-- springCloud -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
-            <!-- mybatis启动器 -->
-            <!--<dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.starter.version}</version>
-            </dependency>-->
-            <!-- 通用Mapper启动器 -->
-            <!--<dependency>
-                <groupId>tk.mybatis</groupId>
-                <artifactId>mapper-spring-boot-starter</artifactId>
-                <version>${mapper.starter.version}</version>
-            </dependency>-->
             <!-- 分页助手启动器 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
@@ -83,13 +105,13 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <optional>true</optional>
+                <version>${lombok.version}</version>
             </dependency>
             <!--mybatisplus插件-->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>2.3.3</version>
+                <version>${mybatisplus.starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

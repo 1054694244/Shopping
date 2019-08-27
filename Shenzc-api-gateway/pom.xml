@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <artifactId>shenzc</artifactId>
         <groupId>com.shenzc.parent</groupId>
+        <artifactId>shenzc</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -19,15 +19,18 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <version>${euraka.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>${euraka.version}</version>
         </dependency>
         <!--是springboot提供的微服务检测接口，默认对外提供几个接口：/info-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${euraka.version}</version>
         </dependency>
     </dependencies>
 
