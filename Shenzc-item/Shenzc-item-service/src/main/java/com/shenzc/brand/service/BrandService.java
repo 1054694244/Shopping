@@ -22,6 +22,15 @@ public class BrandService {
     @Autowired
     private BrandMapper brandMapper;
 
+    /**
+     * 分页查询品牌
+     * @param page
+     * @param rows
+     * @param sortBy
+     * @param desc
+     * @param key
+     * @return
+     */
     public PageResult<Brand> findByAllBrand(Integer page, Integer rows, String sortBy, Boolean desc, String key){
         if (desc){
             PageHelper.startPage(page,rows,sortBy);
@@ -37,5 +46,7 @@ public class BrandService {
         PageInfo<Brand> pageInfo = new PageInfo<>(list);
         return new PageResult<Brand>(pageInfo.getTotal(),pageInfo.getList());
     }
+
+    /*public void insertBrand()*/
 
 }

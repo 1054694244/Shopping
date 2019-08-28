@@ -23,8 +23,8 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("/category/list")
-    public ResponseEntity<List<Category>> findByParentId(@RequestParam(value = "parendId",defaultValue = "0") int parentId){
-        List<Category> categoryList = categoryService.findByParentId(parentId);
+    public ResponseEntity<List<Category>> findByParentId(@RequestParam(value = "pid",defaultValue = "0") int pid){
+        List<Category> categoryList = categoryService.findByParentId(pid);
         if (categoryList == null || categoryList.size()==0){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
