@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,7 +22,7 @@ public class BrandController {
 
     @Autowired
     private BrandService brandService;
-///brand/page?key=&page=1&rows=5&sortBy=id&desc=false
+
     @GetMapping("/brand/page")
     public ResponseEntity<PageResult<Brand>> findAllBrand(@RequestParam(value = "key",defaultValue = "") String key,
                                                        @RequestParam(value = "page",defaultValue = "1") Integer page,
@@ -37,6 +35,43 @@ public class BrandController {
         }else {
             return ResponseEntity.ok(result);
         }
+    }
+
+
+    /**
+     * 新增品牌
+     */
+    @PostMapping("/brand")
+    public ResponseEntity<Void> saveBrand(Brand brand,@RequestParam("cids")List<Integer> cids){
+        this.brandService.saveBrand(brand,cids);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    /**
+     * 修改品牌
+     * @param
+     * @return
+     */
+    @PutMapping("/brand")
+    public ResponseEntity<Void> updagteBrand(Brand brand,@RequestParam("cids")List<Integer> cids){
+        this.brandService.updateBrand(brand,cids);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+
+    @GetMapping("/brandId/{brandId}")
+    public ResponseEntity<List<Category>> queryByBrandId(@PathVariable("brandId") Integer brandId){
+        List<Category> categories = brandService.findByCategoryId(brandId);
+        if (categories == null || categories.size() < 1) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(categories);
+    }
+
+    @DeleteMapping("/brandId/{brandId}")
+    public ResponseEntity deleteBrand(@PathVariable("brandId")Integer brandId){
+        brandService.deleteBrand(brandId);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
 }

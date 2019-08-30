@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenzc.brand.mapper.CategoryBrandMapper">
+
+    <!--批量保存-->
+    <insert id="insertCategoryBrand">
+        <foreach collection="cids" index="index" item="cid" separator=";" close=";">
+            insert into category_brand(category_id,brand_id)
+            values
+            (#{cid},#{brandId})
+        </foreach>
+    </insert>
+
+</mapper>

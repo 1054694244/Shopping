@@ -8,6 +8,7 @@
         <module>Shenzc-api-gateway</module>
         <module>Shenzc-item</module>
         <module>Shenzc-common</module>
+        <module>Shenzc-upload</module>
     </modules>
 
     <parent>

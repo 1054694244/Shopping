@@ -48,8 +48,6 @@ spring:
         login-password: password
       #排除一些静态资源，以提高效率
 
-
-
 #EurekaClient配置
 eureka:
   client:
@@ -63,3 +61,13 @@ eureka:
     ip-address: 127.0.0.1 #指定自己的ip信息，不指定的话会自己寻找
     instance-id: ${spring.application.name}:${server.port}
 
+
+
+#mybaits-plus配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**
+  global-config:
+    #驼峰下划线换砖
+    db-column-underline: true
+    #刷新mapper 调试神器
+    refresh-mapper: true

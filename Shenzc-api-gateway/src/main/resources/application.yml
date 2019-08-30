@@ -22,7 +22,10 @@ zuul:
   retryable: true
   routes:
     item-service: /item/** # 将商品微服务映射到/item/**
+  ignored-services: upload-service
   prefix: /api
+  #ignored-patterns: /upload/** #该请求将不经过网管，或者下面一种写法
+
 
 
 ribbon:
