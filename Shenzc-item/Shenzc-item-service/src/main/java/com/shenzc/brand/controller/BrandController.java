@@ -62,9 +62,9 @@ public class BrandController {
     @GetMapping("/brandId/{brandId}")
     public ResponseEntity<List<Category>> queryByBrandId(@PathVariable("brandId") Integer brandId){
         List<Category> categories = brandService.findByCategoryId(brandId);
-        if (categories == null || categories.size() < 1) {
+        /*if (categories == null || categories.size() < 1) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        }*/
         return ResponseEntity.ok(categories);
     }
 
@@ -72,6 +72,12 @@ public class BrandController {
     public ResponseEntity deleteBrand(@PathVariable("brandId")Integer brandId){
         brandService.deleteBrand(brandId);
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @GetMapping("/brand/cid/{cid}")
+    public ResponseEntity<List<Brand>> queryBrandByCategory(@PathVariable("cid")Integer cid){
+        List<Brand> brands = brandService.queryBrandByCategory(cid);
+        return ResponseEntity.ok(brands);
     }
 
 }

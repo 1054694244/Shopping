@@ -25,4 +25,8 @@ public class CategoryService {
         return categoryMapper.selectList(new EntityWrapper<Category>().eq("parent_id", parentId));
     }
 
+    public List<String> findNameById(Integer id1,Integer id2,Integer id3){
+        return categoryMapper.selectName(id1,id2,id3);
+    }
+
 }

@@ -91,11 +91,17 @@ public class BrandService {
     /**
      * 删除品牌
      */
+    @Transactional
     public void deleteBrand(Integer brandId){
         //删除品牌数据
         brandMapper.deleteById(brandId);
         //删除品牌分类数据
         categoryBrandMapper.delete(new EntityWrapper<CategoryBrand>().eq("brand_id", brandId));
+    }
+
+
+    public List<Brand> queryBrandByCategory(Integer cid){
+        return brandMapper.queryByCategoryId(cid);
     }
 
 }

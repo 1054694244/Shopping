@@ -9,6 +9,7 @@
         <module>Shenzc-item</module>
         <module>Shenzc-common</module>
         <module>Shenzc-upload</module>
+        <module>shenzc-search</module>
     </modules>
 
     <parent>
@@ -48,6 +49,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--feign-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${euraka.version}</version>
+            </dependency>
             <!--jpa-->
             <dependency>
                 <groupId>javax.persistence</groupId>
