@@ -10,6 +10,7 @@
         <module>Shenzc-common</module>
         <module>Shenzc-upload</module>
         <module>shenzc-search</module>
+        <module>shenzc-auth</module>
     </modules>
 
     <parent>
@@ -44,6 +45,7 @@
         <euraka.version>2.0.2.RELEASE</euraka.version>
         <jpa.version>1.0</jpa.version>
         <shenzc.shopping>0.0.1-SNAPSHOT</shenzc.shopping>
+        <security>5.1.2.RELEASE</security>
     </properties>
 
 
@@ -120,6 +122,13 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatisplus.starter.version}</version>
+            </dependency>
+            <!--SpringSecurity-->
+            <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${security}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
