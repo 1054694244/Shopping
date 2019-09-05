@@ -1,0 +1,41 @@
+server:
+  port: 9905
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/shopping?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+  rabbitmq:
+    host: 127.0.0.1
+    username: shenzc
+    password: shenzc
+    virtual-host: /shenzc
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 210000ms
+        multiplier: 2
+    publisher-confirms: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10001/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${eureka.instance.ip-address}.${server.port}
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+
+
+
+mybatis-plus:
+  type-aliases-package: com.shenzc

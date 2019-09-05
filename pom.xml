@@ -11,6 +11,8 @@
         <module>Shenzc-upload</module>
         <module>shenzc-search</module>
         <module>shenzc-auth</module>
+        <module>shenzc-user</module>
+        <module>shenzc-sms-service</module>
     </modules>
 
     <parent>

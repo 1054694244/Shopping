@@ -1,0 +1,17 @@
+server:
+  port: 9906
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    host: 127.0.0.1
+    username: shenzc
+    password: shenzc
+    virtual-host: /shenzc
+
+shenzc:
+  sms:
+    accessKeyId: LTAI4FsUFn7LnbUnV2V6VJmm # 你自己的accessKeyId
+    accessKeySecret: raRmI8QKig7Nlusy8Ib5RBOJRHZxWh # 你自己的AccessKeySecret
+    signName: Shenzc商城 # 签名名称
+    verifyCodeTemplate: SMS_173476912 # 模板名称

@@ -12,10 +12,10 @@ import org.springframework.web.filter.CorsFilter;
  * @create 2019-08-22 17:07
  */
 @Configuration
-public class GlobalCorsConfig {
+public class GlobalCorsConfigUpload {
 
     @Bean
-    public CorsFilter corsFilter() {
+    public CorsFilter corsFilterUpload() {
         //1.添加CORS配置信息
         CorsConfiguration config = new CorsConfiguration();
         //1) 允许的域,不要写*，否则cookie就无法使用了
