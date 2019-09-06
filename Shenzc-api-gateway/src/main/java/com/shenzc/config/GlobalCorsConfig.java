@@ -20,6 +20,8 @@ public class GlobalCorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         //1）允许的域，不要写*，否则cookie无法使用
         config.addAllowedOrigin("http://manage.shenzc.com");
+        config.addAllowedOrigin("http://www.shenzc.com");
+        config.addAllowedOrigin("*");
         //2)是否发送Cookie信息
         config.setAllowCredentials(true);
         //3)允许的请求方式

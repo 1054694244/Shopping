@@ -2,6 +2,7 @@ package entity;
 
 import lombok.Data;
 
+import javax.persistence.FieldResult;
 import javax.persistence.Table;
 import java.util.Date;
 

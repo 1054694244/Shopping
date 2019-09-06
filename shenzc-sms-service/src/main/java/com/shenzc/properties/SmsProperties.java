@@ -10,9 +10,7 @@ import org.springframework.stereotype.Component;
  * @create 2019-09-05-11:53
  */
 @Data
-@AllArgsConstructor
 @ConfigurationProperties(prefix = "shenzc.sms")
-@Component
 public class SmsProperties {
 
     private String accessKeyId;
@@ -22,7 +20,5 @@ public class SmsProperties {
     private String signName;
 
     private String verifyCodeTemplate;
-
-
 
 }

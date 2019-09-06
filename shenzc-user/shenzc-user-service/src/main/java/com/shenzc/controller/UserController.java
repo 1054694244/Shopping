@@ -24,15 +24,11 @@ public class UserController {
             type = 1;
         }
         boolean check = userService.check(data, type);
-        if (!check){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }else {
-            return ResponseEntity.ok(check);
-        }
+        return ResponseEntity.ok(!check);
     }
 
 
-    @PostMapping("code")
+    @PostMapping("send")
     public ResponseEntity<Void> sendVerifyCode(String phone){
         Boolean boo = userService.sendVerifyCode(phone);
         if (!boo || boo==null){
@@ -41,8 +37,8 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PostMapping("register")
-    public ResponseEntity<Void> register(User user, @RequestParam("code")String code){
+    @PostMapping("/register")
+    public ResponseEntity<Void> register(User user, @RequestParam(value = "code")String code){
         Boolean boo = userService.register(user,code);
         if (boo==null || !boo){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
